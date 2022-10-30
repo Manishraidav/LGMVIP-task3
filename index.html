@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* for css codes*/
+        
+        .header {
+            display: flex;
+            height: 80px;
+            background-color: rgb(14, 221, 14);
+            justify-content: center;
+        }
+        
+        body {
+            text-align: center;
+        }
+        
+        .content {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .ab {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+        
+        .ans {
+            background-color: aliceblue;
+            width: 500px;
+            height: 500px;
+        }
+        
+        .en {
+            background-color: rgb(0, 255, 42);
+            width: 70px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        
+        .cl {
+            width: 70px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        // for java codes
+        function testVariable() {
+            // initialize the variables
+            var strText = document.getElementById("fname").value;
+            var strText1 = document.getElementById("email").value;
+            var strText2 = document.getElementById("fweb").value;
+            var strText3 = document.getElementById("img").value;
+
+            let radios = document.querySelectorAll('input[name="gender"]:checked');
+            let man; // define a variable
+
+            for (const radioButton of radios) { // function for selection of radio buttons
+                if (radioButton.checked) {
+                    man = radioButton.value;
+                    break;
+                }
+            }
+            var strText4 = man
+
+
+
+            let checkboxes = document.querySelectorAll('input[name="fav_language"]:checked');
+            let values = [];
+            checkboxes.forEach((checkbox) => { // function for selection of checked boxes
+                values.push(checkbox.value);
+            });
+            var strText5 = values;
+
+
+            // define a result variable for display
+            var result = 'name:- ' + strText + '##   ' + 'Email:- ' + strText1 + '##  ' + 'Website:- ' + strText2 + '##   ' + 'Photo Link:- ' + strText3 + '##   ' + 'Gender:- ' + strText4 + '##   ' + 'Favourite Language:-' + strText5;
+            document.getElementById('spanResult').textContent = result;
+
+        }
+    </script>
+
+    <title>Student Enrollment Form</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Student Enrollment Form</h1>
+    </div>
+    <div class="content" id="myForm">
+        <div>
+            <div class="ab">
+                <label for="fname">Name:-</label>
+                <input type="text" class="a" id="fname">
+                <label for="email">Email:-</label>
+                <input type="email" class="a" id="email">
+                <label for="fweb">Website:-</label>
+                <input type="text" class="a" id="fweb">
+                <label for="img">Image link:-</label>
+                <input type="file" class="a" id="img" accept="image/*">
+            </div>
+            <div class="gender">
+                <p>Gender:-</p>
+                <input type="radio" name="gender" id="male" value="MALE">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="FEMALE">
+                <label for="female">Female</label>
+
+            </div>
+            <br>
+            <div class="lang">
+                <p>language:</p>
+                <input type="checkbox" id="html" name="fav_language" value="HTML">
+                <label for="html">HTML</label>
+                <input type="checkbox" id="css" name="fav_language" value="CSS">
+                <label for="css">CSS</label>
+                <input type="checkbox" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+            </div>
+            <div>
+
+                <input type="button" id="" class="cl" value="Cancel" onClick="window.location.reload();">
+                <button onclick="testVariable()" class="en">Enroll</button>
+            </div>
+
+        </div>
+        <div class="ans">
+            <span id="spanResult">
+
+            </span>
+        </div>
+    </div>
+
+</body>
+
+</html>
